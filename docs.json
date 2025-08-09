@@ -38,12 +38,12 @@
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "",
             "pages": [
-              "api-reference/introduction"
+              ""
             ]
           },
           {
