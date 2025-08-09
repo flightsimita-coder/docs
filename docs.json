@@ -18,23 +18,21 @@
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "downloadsoft",
+              "faqpage"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Strumenti",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "acarsguide",
+              "pilothubguide"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Flying",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "bookflightguide"
             ]
           },
           {
