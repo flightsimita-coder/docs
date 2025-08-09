@@ -71,8 +71,8 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "Pilot Portal",
+          "href": "https://vamsys.io/register/flyitava",
           "icon": "book-open-cover"
         },
         {
