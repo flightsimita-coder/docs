@@ -73,17 +73,12 @@
         {
           "anchor": "Pilot Portal",
           "href": "https://vamsys.io/register/flyitava",
-          "icon": "book-open-cover"
+          "icon": "plane"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Discord",
+          "href": "https://discord.com/invite/W6cW5Hphew",
+          "icon": "people-group"
         }
       ]
     }
