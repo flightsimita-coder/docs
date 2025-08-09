@@ -58,12 +58,6 @@
     "dark": "/logo/white_scritta.png"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
       "label": "YouTube",
