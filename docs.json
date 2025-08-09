@@ -54,8 +54,8 @@
     }
   },
   "logo": {
-    "light": "/logo/black_scritta.svg",
-    "dark": "/logo/white_scritta.svg"
+    "light": "/logo/black_scritta.png",
+    "dark": "/logo/white_scritta.png"
   },
   "navbar": {
     "links": [
