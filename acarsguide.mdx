@@ -1,0 +1,119 @@
+---
+title: "Come usare Pegasus ACARS"
+description: "Guida completa all’utilizzo del software Pegasus ACARS per il tracciamento dei voli"
+---
+
+![Backgroundhome Pn](/images/backgroundhome.png)
+
+## Che cos'è Pegasus ACARS?
+
+L’**ACARS** (_Aircraft Communications Addressing and Reporting System_) è un sistema di collegamento dati digitale per la trasmissione di messaggi tra aeromobili e stazioni a terra.\
+Nel mondo delle compagnie aeree virtuali, il software ACARS traccia il tuo volo, registra i dati e invia automaticamente i tuoi report di volo.
+
+<Note>
+  Pegasus ACARS è essenziale per tutti i voli FlyITA. I voli non tracciati con ACARS non verranno conteggiati per le tue ore di volo né per l’avanzamento di grado.
+</Note>
+
+## Utilizzo di Pegasus ACARS per i tuoi voli
+
+### Pre-Flight
+
+<AccordionGroup>
+  <Accordion title="Carica il tuo flight plan" icon="file-spreadsheet">
+    - In **Pegasus ACARS**, vai alla scheda **“Flights”**
+    - Seleziona il volo pianificato dall’elenco
+    - Clicca su **“Load Flight Plan”**
+    - I dettagli del volo verranno inseriti automaticamente
+  </Accordion>
+  <Accordion title="Pre-Flight Checklist" icon="ballot-check">
+    Prima di iniziare il tracciamento del volo:
+
+    - Assicurati che il simulatore sia avviato e connesso
+    - Verifica che il tipo di aeromobile corrisponda a quello del volo pianificato
+    - Assicurati che gli aeroporti di partenza/arrivo siano corretti
+    - Controlla che le impostazioni meteo corrispondano a quelle di **VATSIM**
+
+    <Warning>
+      Non iniziare a registrare il volo prima che il simulatore sia completamente caricato e che tu sia al parcheggiato al gate di partenza.\
+      Atte
+    </Warning>
+  </Accordion>
+</AccordionGroup>
+
+### Durante il volo
+
+Il tracciamento del volo avviene automaticamente una volta avviato il processo di registrazione:
+
+1. Clicca " Start Flight" in Pegasus ACARS
+2. Il software rileverà la tua posizione, altitudine, velocità e altri parametri.
+3. Gli eventi chiave del volo verranno registrati automaticamente:
+   - Avvio motori
+   - Pushback
+   - Decollo
+   - Crociera
+   - Discesa
+   - Atterraggio
+   - Spegnimento motori
+
+<Warning>
+  Se Pegasus ACARS perde la connessione con il simulatore durante il volo, riconnetti il prima possibile.\
+  Brevi disconnessioni non influiranno sul report di volo, ma disconnessioni prolungate potrebbero comportare un volo incompleto.
+</Warning>
+
+<Warning>
+  Non cambiare la velocità di simulazione, interrompere o fare dei replay durante il volo mentre Pegasus è in esecuzione e sta registrando. Queste operazioni influiranno negativamente sul tuo PIREP, registrando il percorso e/o l’atterraggio più volte.\
+  Invia il tuo PIREP prima di rivedere eventuali replay.
+</Warning>
+
+### Dopo il volo
+
+Dopo essere atterrato, raggiunto il gate di arrivo e spento i motori:
+
+1. Pegasus ACARS ti inviterà a completare il tuo volo
+2. Rivedi il riepilogo del volo e aggiungi eventuali commenti
+3. Clicca "Submit Flight Report"
+4. I dati del tuo volo verranno inviati al database FlyITA per essere revisionati per l'approvazione
+
+## Risoluzione dei problemi comuni
+
+<CardGroup cols={2}>
+  <Card title="Simulatore non rilevato" icon="display" href="/essentials/markdown">
+    Assicurati che il simulatore sia in esecuzione prima di aprire Pegasus ACARS. Se ancora non funziona, prova a reinstallare il modulo di connessione del simulatore.
+  </Card>
+  <Card title="Connessione persa durante il volo" icon="globe-pointer" href="/essentials/settings">
+    Controlla la connessione a Internet. Pegasus ACARS può memorizzare i dati localmente fino a 20 minuti di disconnessione prima di richiedere la riconnessione.
+  </Card>
+  <Card title="Volo non visibile nei voli pianificati" icon="calendar" href="/essentials/code">
+    Aggiorna l’elenco dei voli. Se il volo non compare ancora, verifica che la prenotazione sia stata confermata nel Pilot Hub.
+  </Card>
+  <Card title="Errore nell'invio del report di volo" icon="bug" href="/api-reference/introduction">
+    Prova a inviare di nuovo. Se il problema persiste, salva il report di volo in locale e contatta il supporto tecnico fornendo i file di log.
+  </Card>
+</CardGroup>
+
+### Features Avanzate
+
+- **Custom Flight Planning:** crea e importa piani di volo personalizzati
+- **Voice Reporting:** abilita gli annunci vocali per gli eventi di volo _(non disponibile al momento)_
+- **Performance Analysis:** consulta metriche e performance dettagliate dopo ogni volo
+- **Logbook Integration:** aggiorna automaticamente il tuo registro voli virtuale
+- 
+
+## Hai bisogno di aiuto?
+
+<Columns cols={2}>
+  <Card title="Discord Community" icon="link-horizontal" href="/essentials/markdown">
+    Trova risposte alle tue domande e ricevi assistenza diretta da più di 1000 utenti nella nostra community
+
+    Join Discord
+  </Card>
+  <Card title="Email Support" icon="envelope" href="/essentials/code">
+    Contatta il nostro team di supporto per ricevere assistenza personalizzata
+
+    [supporto@flyita.it](mailto:supporto@flyita.it)
+  </Card>
+</Columns>
+
+<Danger>
+  Le procedure e i contenuti di FlyITA non devono essere usati per procedure nel mondo reale.
+</Danger>
