@@ -56,26 +56,3 @@ a:hover, .link:hover, button:hover, .button:hover {
 :root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3 {
   text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
 }
-
-/* =============================== */
-/* INGRANDISCI LOGO NAVBAR          */
-/* =============================== */
-/* Selettori robusti per il logo nella topbar di Mintlify */
-header a[href="/"] img,
-header a[aria-label="Home"] img,
-header .logo img,
-header .navbar-logo img {
-  height: 56px !important;   /* aumenta/diminuisci per regolare */
-  width: auto !important;
-  max-height: none !important;
-  display: inline-block;
-}
-
-/* Allineamento verticale del gruppo logo */
-header a[href="/"],
-header a[aria-label="Home"],
-header .logo,
-header .navbar-logo {
-  display: flex;
-  align-items: center;
-}
