@@ -1,16 +1,13 @@
-/* =============================== */
-/* VARIABILI GLOBALI                */
-/* =============================== */
 :root {
   --line-offset: 360px;               /* distanza dal centro */
-  --line-color: rgba(0,191,255,0.35); /* azzurro con trasparenza */
+  --line-color: rgba(0,191,255,0.35); /* colore delle linee */
 }
 
 /* =============================== */
-/* GRADIENTE + LINEE SU CONTAINER   */
+/* LINEE + GRADIENTE SEMPRE VISIBILI*/
 /* =============================== */
-.dark .mintlify-container,
-:root[data-theme="dark"] .mintlify-container {
+html.dark,
+:root[data-theme="dark"] {
   min-height: 100%;
   background:
     linear-gradient(to bottom, var(--line-color), var(--line-color)) fixed,
@@ -26,25 +23,28 @@
 }
 
 /* =============================== */
-/* RENDI TRASPARENTI TUTTI GLI STRATI SOPRA */
+/* TUTTO TRASPARENTE SOPRA          */
 /* =============================== */
-.dark body,
+html.dark body,
 :root[data-theme="dark"] body,
-.dark main,
+html.dark main,
 :root[data-theme="dark"] main,
-.dark .mintlify-content,
-:root[data-theme="dark"] .mintlify-content,
-.dark header,
+html.dark header,
 :root[data-theme="dark"] header,
-.dark footer,
+html.dark footer,
 :root[data-theme="dark"] footer,
-.dark aside,
-:root[data-theme="dark"] aside {
-  background: transparent !important;
+html.dark aside,
+:root[data-theme="dark"] aside,
+html.dark section,
+:root[data-theme="dark"] section,
+html.dark div,
+:root[data-theme="dark"] div {
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
 /* =============================== */
-/* TEMA AZZURRO                    */
+/* COLORI DEL TEMA AZZURRO          */
 /* =============================== */
 a, .link, button, .button {
   color: #00BFFF;
