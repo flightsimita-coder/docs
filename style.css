@@ -56,3 +56,17 @@ a:hover, .link:hover, button:hover, .button:hover {
 :root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3 {
   text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
 }
+
+/* =============================== */
+/* INGRANDISCI LOGO NAVBAR          */
+/* =============================== */
+.navbar-logo img {
+  max-height: 56px !important; /* aumenta qui per ingrandire ancora */
+  height: auto !important;
+  width: auto !important;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
