@@ -1,50 +1,57 @@
 :root {
   --line-offset: 360px;               /* distanza dal centro */
-  --line-color: rgba(0,191,255,0.35); /* colore delle linee */
+  --line-color: rgba(0,191,255,0.35); /* colore linee */
 }
 
 /* =============================== */
-/* LINEE + GRADIENTE SEMPRE VISIBILI*/
+/* GRADIENTE SFONDO BASE            */
 /* =============================== */
 html.dark,
 :root[data-theme="dark"] {
-  min-height: 100%;
-  background:
-    linear-gradient(to bottom, var(--line-color), var(--line-color)) fixed,
-    linear-gradient(to bottom, var(--line-color), var(--line-color)) fixed,
-    linear-gradient(135deg, #001028 0%, #000000 100%) fixed !important;
-  background-size: 1px 100%, 1px 100%, cover !important;
-  background-position:
-    calc(50% - var(--line-offset)) 0,
-    calc(50% + var(--line-offset)) 0,
-    center !important;
-  background-repeat: no-repeat, no-repeat, no-repeat !important;
-  background-attachment: fixed, fixed, fixed !important;
+  background: linear-gradient(135deg, #001028 0%, #000000 100%) fixed !important;
 }
 
-/* =============================== */
-/* TUTTO TRASPARENTE SOPRA          */
-/* =============================== */
-html.dark body,
+/* Rendi trasparenti i layer sopra il gradiente */
+.dark body,
 :root[data-theme="dark"] body,
-html.dark main,
-:root[data-theme="dark"] main,
-html.dark header,
-:root[data-theme="dark"] header,
-html.dark footer,
-:root[data-theme="dark"] footer,
-html.dark aside,
-:root[data-theme="dark"] aside,
-html.dark section,
-:root[data-theme="dark"] section,
-html.dark div,
-:root[data-theme="dark"] div {
-  background-color: transparent !important;
-  background-image: none !important;
+.dark .mintlify-container,
+:root[data-theme="dark"] .mintlify-container,
+.dark main,
+:root[data-theme="dark"] main {
+  background: transparent !important;
 }
 
 /* =============================== */
-/* COLORI DEL TEMA AZZURRO          */
+/* LINEE DENTRO IL CONTENUTO        */
+/* =============================== */
+.dark main {
+  position: relative;
+}
+
+.dark main::before,
+.dark main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--line-color);
+  pointer-events: none;
+  z-index: 10; /* sopra il gradiente ma sotto il testo */
+}
+
+/* linea sinistra */
+.dark main::before {
+  left: calc(50% - var(--line-offset));
+}
+
+/* linea destra */
+.dark main::after {
+  left: calc(50% + var(--line-offset));
+}
+
+/* =============================== */
+/* COLORI AZZURRO                   */
 /* =============================== */
 a, .link, button, .button {
   color: #00BFFF;
