@@ -64,31 +64,85 @@ a:hover, .link:hover, button:hover, .button:hover {
 }
 
 /* =============================== */
-/* LINEE DI SEPARAZIONE COLONNE     */
+/* LINEE DI SEPARAZIONE COLONNE — CONTINUE E CENTRATE */
 /* =============================== */
+
+/* distanza delle linee dal centro (puoi regolarla) */
+:root {
+  --line-offset: 460px; /* 460px dal centro */
+  --line-color: rgba(0,191,255,0.35);
+  --line-glow: rgba(0,191,255,0.10);
+}
+
 @media (min-width: 1024px) {
-  /* Sidebar sinistra: bordo a destra */
-  html.dark main > aside:first-of-type,
-  html.dark nav[aria-label="Sidebar"],
-  html.dark [class*="sidebar"]:first-of-type {
-    border-right: 1px solid rgba(0,191,255,0.35) !important;
+  html.dark main,
+  :root[data-theme="dark"] main {
+    position: relative;
+    z-index: 0; /* crea un contesto per gli pseudo-elementi */
   }
 
-  /* TOC/colonna destra: bordo a sinistra */
-  html.dark main > aside:last-of-type,
-  html.dark [class*="toc"],
-  html.dark [aria-label="On this page"] {
-    border-left: 1px solid rgba(0,191,255,0.35) !important;
+  /* le due linee: una a sinistra e una a destra del centro */
+  html.dark main::before,
+  html.dark main::after,
+  :root[data-theme="dark"] main::before,
+  :root[data-theme="dark"] main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;          /* copre tutta l’altezza del contenuto */
+    width: 1px;
+    background: var(--line-color);
+    pointer-events: none;
+    z-index: 0;
+    /* leggero alone */
+    box-shadow:
+      0 0 0 1px var(--line-color),
+      0 0 12px 0 var(--line-glow);
   }
 
-  /* Fallback: bordo intorno al contenuto centrale */
+  /* linea sinistra */
+  html.dark main::before,
+  :root[data-theme="dark"] main::before {
+    left: calc(50% - var(--line-offset));
+  }
+
+  /* linea destra */
+  html.dark main::after,
+  :root[data-theme="dark"] main::after {
+    left: calc(50% + var(--line-offset));
+  }
+
+  /* rimuove eventuali vecchi bordi */
   html.dark main > article,
   html.dark main [class*="content"],
   html.dark main [class*="mdx"],
-  html.dark main [class*="prose"] {
-    border-left: 1px solid rgba(0,191,255,0.35) !important;
-    border-right: 1px solid rgba(0,191,255,0.35) !important;
-    padding-left: 2rem;
-    padding-right: 2rem;
+  html.dark main [class*="prose"],
+  html.dark main > aside:first-of-type,
+  html.dark main > aside:last-of-type,
+  :root[data-theme="dark"] main > article,
+  :root[data-theme="dark"] main [class*="content"],
+  :root[data-theme="dark"] main [class*="mdx"],
+  :root[data-theme="dark"] main [class*="prose"],
+  :root[data-theme="dark"] main > aside:first-of-type,
+  :root[data-theme="dark"] main > aside:last-of-type {
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* responsività */
+@media (min-width: 1280px) {
+  :root { --line-offset: 520px; }  /* layout ampio */
+}
+@media (max-width: 1279px) and (min-width: 1024px) {
+  :root { --line-offset: 420px; }  /* layout medio */
+}
+@media (max-width: 1023px) {
+  html.dark main::before,
+  html.dark main::after,
+  :root[data-theme="dark"] main::before,
+  :root[data-theme="dark"] main::after {
+    display: none; /* su mobile le nascondiamo */
   }
 }
