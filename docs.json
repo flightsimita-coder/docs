@@ -13,7 +13,7 @@
   },
   "background": {
     "color": {
-      "dark": "#0D0A0C"
+      "dark": "#001236"
     }
   },
   "favicon": "/favicon.svg",
@@ -78,5 +78,6 @@
       "youtube": "https://www.youtube.com/@FlightSimITA",
       "discord": "https://discord.com/invite/W6cW5Hphew"
     }
-  }
+  },
+  "customCss": ["style.css"]
 }
