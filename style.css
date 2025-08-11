@@ -2,7 +2,7 @@
 /* VARIABILI GLOBALI                */
 /* =============================== */
 :root{
-  --line-offset: 460px;                 /* distanza delle linee dal centro */
+  --line-offset: 350px;                 /* distanza delle linee dal centro */
   --line-color: rgba(0,191,255,0.35);   /* azzurro del tema con trasparenza */
 }
 
