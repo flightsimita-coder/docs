@@ -1,9 +1,9 @@
 /* =============================== */
 /* VARIABILI GLOBALI                */
 /* =============================== */
-:root{
-  --line-offset: 350px;                 /* distanza delle linee dal centro */
-  --line-color: rgba(0,191,255,0.35);   /* azzurro del tema con trasparenza */
+:root {
+  --line-offset: 360px;               /* distanza delle linee dal centro */
+  --line-color: rgba(0,191,255,0.35); /* azzurro del tema con trasparenza */
 }
 
 /* =============================== */
@@ -33,12 +33,12 @@ html.dark,
 
   background-repeat: no-repeat, no-repeat, no-repeat !important;
   background-attachment: fixed, fixed, fixed !important;
-  background-color: transparent !important; /* non coprire i layer sopra */
+  background-color: transparent !important;
 }
 
-/* =============================== */
-/* RENDI TRASPARENTI I WRAPPER     */
-/* =============================== */
+/* Rendi trasparenti i wrapper interni perché si veda lo sfondo */
+.dark body,
+:root[data-theme="dark"] body,
 .dark .mintlify-container,
 :root[data-theme="dark"] .mintlify-container,
 .dark main,
@@ -55,7 +55,6 @@ html.dark,
 /* =============================== */
 /* TEMA AZZURRO                    */
 /* =============================== */
-
 a, .link, button, .button { color: #00BFFF; }
 a:hover, .link:hover, button:hover, .button:hover { color: #4DDBFF; }
 
@@ -71,23 +70,4 @@ a:hover, .link:hover, button:hover, .button:hover { color: #4DDBFF; }
 .dark h1, .dark h2, .dark h3,
 :root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3 {
   text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
-}
-
-/* =============================== */
-/* RESPONSIVE                      */
-/* =============================== */
-@media (min-width: 1280px){ :root{ --line-offset: 520px; } }  /* layout ampio */
-@media (max-width: 1279px) and (min-width: 1024px){ :root{ --line-offset: 420px; } } /* medio */
-@media (max-width: 1023px){
-  /* su mobile nascondiamo le linee, teniamo solo il gradiente */
-  html.dark,
-  :root[data-theme="dark"],
-  .dark body,
-  :root[data-theme="dark"] body {
-    background:
-      linear-gradient(135deg, #001028 0%, #000000 100%) fixed !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-  }
 }
