@@ -1,40 +1,44 @@
 /* =============================== */
 /* VARIABILI GLOBALI                */
 /* =============================== */
-:root {
-  --line-offset: 460px;                /* distanza dal centro */
-  --line-color: rgba(0,191,255,0.35);  /* colore linee */
+:root{
+  --line-offset: 460px;                 /* distanza delle linee dal centro */
+  --line-color: rgba(0,191,255,0.35);   /* azzurro del tema con trasparenza */
 }
 
 /* =============================== */
-/* GRADIENTE + LINEE DI SEPARAZIONE */
+/* GRADIENTE + LINEE (APPLICATE A HTML E BODY) */
 /* =============================== */
 
-html, body {
-  min-height: 100%;
-}
+html, body { min-height: 100%; }
 
 html.dark,
-:root[data-theme="dark"] {
-  /* 2 linee + gradiente */
+:root[data-theme="dark"],
+.dark body,
+:root[data-theme="dark"] body {
+  /* due “barre” verticali + gradiente di sfondo */
   background:
     linear-gradient(to bottom, var(--line-color), var(--line-color)) fixed,
     linear-gradient(to bottom, var(--line-color), var(--line-color)) fixed,
     linear-gradient(135deg, #001028 0%, #000000 100%) fixed !important;
 
-  background-size: 1px 100%, 1px 100%, cover;
+  /* larghezza 1px a tutta altezza per le due linee */
+  background-size: 1px 100%, 1px 100%, cover !important;
+
+  /* posizioni: a sinistra e a destra del centro */
   background-position:
     calc(50% - var(--line-offset)) 0,
     calc(50% + var(--line-offset)) 0,
-    center;
+    center !important;
 
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-attachment: fixed, fixed, fixed;
+  background-repeat: no-repeat, no-repeat, no-repeat !important;
+  background-attachment: fixed, fixed, fixed !important;
+  background-color: transparent !important; /* non coprire i layer sopra */
 }
 
-/* Rendi trasparenti i wrapper interni */
-.dark body,
-:root[data-theme="dark"] body,
+/* =============================== */
+/* RENDI TRASPARENTI I WRAPPER     */
+/* =============================== */
 .dark .mintlify-container,
 :root[data-theme="dark"] .mintlify-container,
 .dark main,
@@ -49,15 +53,11 @@ html.dark,
 }
 
 /* =============================== */
-/* COLORI E TEMA AZZURRO            */
+/* TEMA AZZURRO                    */
 /* =============================== */
 
-a, .link, button, .button {
-  color: #00BFFF;
-}
-a:hover, .link:hover, button:hover, .button:hover {
-  color: #4DDBFF;
-}
+a, .link, button, .button { color: #00BFFF; }
+a:hover, .link:hover, button:hover, .button:hover { color: #4DDBFF; }
 
 .dark .card,
 :root[data-theme="dark"] .card {
@@ -66,9 +66,7 @@ a:hover, .link:hover, button:hover, .button:hover {
 }
 
 .dark body, .dark .prose,
-:root[data-theme="dark"] body, :root[data-theme="dark"] .prose {
-  color: #f0f0f0;
-}
+:root[data-theme="dark"] body, :root[data-theme="dark"] .prose { color: #f0f0f0; }
 
 .dark h1, .dark h2, .dark h3,
 :root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3 {
@@ -76,22 +74,20 @@ a:hover, .link:hover, button:hover, .button:hover {
 }
 
 /* =============================== */
-/* RESPONSIVITÀ                     */
+/* RESPONSIVE                      */
 /* =============================== */
-
-@media (min-width: 1280px) {
-  :root { --line-offset: 520px; }   /* layout ampio */
-}
-@media (max-width: 1279px) and (min-width: 1024px) {
-  :root { --line-offset: 420px; }   /* layout medio */
-}
-@media (max-width: 1023px) {
-  /* Su mobile: solo gradiente, senza linee */
+@media (min-width: 1280px){ :root{ --line-offset: 520px; } }  /* layout ampio */
+@media (max-width: 1279px) and (min-width: 1024px){ :root{ --line-offset: 420px; } } /* medio */
+@media (max-width: 1023px){
+  /* su mobile nascondiamo le linee, teniamo solo il gradiente */
   html.dark,
-  :root[data-theme="dark"] {
+  :root[data-theme="dark"],
+  .dark body,
+  :root[data-theme="dark"] body {
     background:
       linear-gradient(135deg, #001028 0%, #000000 100%) fixed !important;
-    background-size: cover;
-    background-position: center;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
   }
 }
