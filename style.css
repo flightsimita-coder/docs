@@ -1,42 +1,57 @@
-/* Gradiente sfondo dark fisso */
-.dark body {
-  background: linear-gradient(to bottom, #001236 0%, #000000 100%) fixed !important;
-  background-attachment: fixed !important; /* Mantiene il gradiente fermo */
+/* Assicura che il gradiente occupi tutto e resti fisso */
+html, body {
+  min-height: 100%;
 }
 
-/* Evita che contenitori interni sovrascrivano il gradiente */
-.dark .mintlify-container {
-  background: transparent !important;
+/* Mintlify usa .dark su <html> o un data-attr: copriamo entrambi */
+html.dark,
+:root[data-theme="dark"] {
+  /* Gradiente più scuro: blu notte -> nero, diagonale */
+  background: linear-gradient(90deg, #001028 0%, #000000 100%) fixed !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
-/* Mantieni trasparenti navbar e footer per vedere il gradiente */
+/* Evita che wrapper interni mettano un background opaco sopra il gradiente */
+.dark body,
+:root[data-theme="dark"] body,
+.dark .mintlify-container,
+:root[data-theme="dark"] .mintlify-container,
+.dark main,
+:root[data-theme="dark"] main,
+.dark .mintlify-content,
+:root[data-theme="dark"] .mintlify-content,
 .dark header,
-.dark footer {
+:root[data-theme="dark"] header,
+.dark footer,
+:root[data-theme="dark"] footer {
   background: transparent !important;
 }
 
-/* Link e pulsanti in rosso acceso */
-a,
-.link,
-button,
-.button {
+/* Bordi/card appena visibili sullo scuro */
+.dark .card,
+:root[data-theme="dark"] .card {
+  background: rgba(255,255,255,0.02) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+/* Colore link/CTA in rosso + hover leggermente più chiaro */
+a, .link, button, .button {
   color: #E44B4A;
 }
-a:hover,
-button:hover,
-.button:hover {
+a:hover, .link:hover, button:hover, .button:hover {
   color: #ff5e5d;
 }
 
-/* Migliora leggibilità del testo sullo sfondo scuro */
-.dark body,
-.dark .prose {
+/* Testo chiaro per leggibilità */
+.dark body, .dark .prose,
+:root[data-theme="dark"] body, :root[data-theme="dark"] .prose {
   color: #f0f0f0;
 }
 
-/* Evidenzia titoli con leggero effetto glow */
-.dark h1,
-.dark h2,
-.dark h3 {
-  text-shadow: 0 0 6px rgba(228, 75, 74, 0.4);
+/* Titoli con lieve glow (opzionale) */
+.dark h1, .dark h2, .dark h3,
+:root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3 {
+  text-shadow: 0 0 6px rgba(0, 16, 40, 0.4);
 }
