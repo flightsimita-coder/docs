@@ -56,3 +56,13 @@ a:hover, .link:hover, button:hover, .button:hover {
 :root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3 {
   text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
 }
+
+/* Effetto bagliore sulle card quando si passa sopra col mouse */
+.dark .card:hover,
+:root[data-theme="dark"] .card:hover {
+  box-shadow:
+    0 0 10px rgba(0, 191, 255, 0.6),
+    0 0 20px rgba(0, 191, 255, 0.4);
+  border-color: #00BFFF !important; /* assicura il bordo azzurro */
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
