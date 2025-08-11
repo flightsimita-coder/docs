@@ -1,0 +1,63 @@
+/* Palette base in linea con il sito di riferimento */
+:root {
+  /* accenti */
+  --primary: 228 75 74;        /* #E44B4A */
+  --primary-light: 228 75 74;
+  --primary-dark: 228 75 74;
+
+  /* scala di grigi chiara (usata in light mode) */
+  --gray-50: 249 245 245;
+  --gray-100: 244 240 240;
+  --gray-200: 229 224 224;
+  --gray-300: 212 208 208;
+  --gray-400: 165 160 160;
+  --gray-500: 118 114 114;
+  --gray-600: 86 82 82;
+  --gray-700: 69 64 64;
+  --gray-800: 44 39 39;
+  --gray-900: 29 25 25;
+  --gray-950: 17 12 12;
+}
+
+/* Tema scuro: fondo e testo */
+.dark {
+  --background-dark: 13 10 12;    /* #0D0A0C */
+}
+
+/* Ritocchi mirati a componenti comuni di Mintlify */
+.dark body {
+  background-color: rgb(var(--background-dark));
+}
+
+/* Sidebar, card, pill: leggera enfasi col primario */
+.dark .card,
+.dark .nav-dropdown-trigger,
+.dark .toc,
+.dark .table-of-contents {
+  border-color: rgba(255,255,255,.08);
+  background: rgba(255,255,255,.02);
+}
+
+.dark .nav-tag-pill-text {
+  color: rgb(var(--primary-dark));
+  background: color-mix(in oklab, rgb(var(--primary)) 12%, transparent);
+}
+
+/* Link e focus states con il rosso */
+a,
+.link,
+a:focus {
+  color: rgb(var(--primary));
+}
+:where(button, a, .link):focus-visible {
+  outline: 2px solid rgb(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Banner e immagini (come nel sito che hai analizzato) */
+.prose img,
+.mintlify-content img {
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.2);
+  box-shadow: 0 1px 2px rgba(255,255,255,.1), 0 5px 12px rgba(255,255,255,.08);
+}
