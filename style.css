@@ -1,3 +1,7 @@
+/* =============================== */
+/* GRADIENTE SFONDO                 */
+/* =============================== */
+
 /* Assicura che il gradiente occupi tutto e resti fisso */
 html, body {
   min-height: 100%;
@@ -28,6 +32,10 @@ html.dark,
   background: transparent !important;
 }
 
+/* =============================== */
+/* COLORI TEMA                      */
+/* =============================== */
+
 /* Bordi/card appena visibili sullo scuro */
 .dark .card,
 :root[data-theme="dark"] .card {
@@ -55,17 +63,32 @@ a:hover, .link:hover, button:hover, .button:hover {
   text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
 }
 
-/* -------------------- */
-/* LINEE LATERALI */
-/* -------------------- */
-.dark main {
-  display: flex;
-}
+/* =============================== */
+/* LINEE DI SEPARAZIONE COLONNE     */
+/* =============================== */
+@media (min-width: 1024px) {
+  /* Sidebar sinistra: bordo a destra */
+  html.dark main > aside:first-of-type,
+  html.dark nav[aria-label="Sidebar"],
+  html.dark [class*="sidebar"]:first-of-type {
+    border-right: 1px solid rgba(0,191,255,0.35) !important;
+  }
 
-.dark .mintlify-content {
-  border-left: 1px solid rgba(0, 191, 255, 0.4);
-  border-right: 1px solid rgba(0, 191, 255, 0.4);
-  padding-left: 2rem;
-  padding-right: 2rem;
-  box-shadow: inset 1px 0 0 rgba(0, 191, 255, 0.15), inset -1px 0 0 rgba(0, 191, 255, 0.15);
+  /* TOC/colonna destra: bordo a sinistra */
+  html.dark main > aside:last-of-type,
+  html.dark [class*="toc"],
+  html.dark [aria-label="On this page"] {
+    border-left: 1px solid rgba(0,191,255,0.35) !important;
+  }
+
+  /* Fallback: bordo intorno al contenuto centrale */
+  html.dark main > article,
+  html.dark main [class*="content"],
+  html.dark main [class*="mdx"],
+  html.dark main [class*="prose"] {
+    border-left: 1px solid rgba(0,191,255,0.35) !important;
+    border-right: 1px solid rgba(0,191,255,0.35) !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
