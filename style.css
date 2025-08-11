@@ -3,11 +3,10 @@ html, body {
   min-height: 100%;
 }
 
-/* Mintlify usa .dark su <html> o un data-attr: copriamo entrambi */
+/* Gradiente scuro fisso: blu notte -> nero */
 html.dark,
 :root[data-theme="dark"] {
-  /* Gradiente più scuro: blu notte -> nero, diagonale */
-  background: linear-gradient(90deg, #001028 0%, #000000 100%) fixed !important;
+  background: linear-gradient(135deg, #001028 0%, #000000 100%) fixed !important;
   background-attachment: fixed !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -36,12 +35,12 @@ html.dark,
   border-color: rgba(255,255,255,0.08) !important;
 }
 
-/* Colore link/CTA in rosso + hover leggermente più chiaro */
+/* Link e pulsanti in azzurro */
 a, .link, button, .button {
-  color: #E44B4A;
+  color: #00BFFF;
 }
 a:hover, .link:hover, button:hover, .button:hover {
-  color: #ff5e5d;
+  color: #4DDBFF;
 }
 
 /* Testo chiaro per leggibilità */
@@ -50,8 +49,8 @@ a:hover, .link:hover, button:hover, .button:hover {
   color: #f0f0f0;
 }
 
-/* Titoli con lieve glow (opzionale) */
+/* Titoli con lieve glow azzurro */
 .dark h1, .dark h2, .dark h3,
 :root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3 {
-  text-shadow: 0 0 6px rgba(0, 16, 40, 0.4);
+  text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
 }
