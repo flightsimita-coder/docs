@@ -1,17 +1,16 @@
 :root {
-  --line-offset: 360px;               /* distanza dal centro */
+  --line-offset: 360px;               /* distanza dal centro: abbassa per più vicine */
   --line-color: rgba(0,191,255,0.35); /* colore linee */
+  --line-glow: rgba(0,191,255,0.10);  /* alone */
 }
 
-/* =============================== */
-/* GRADIENTE SFONDO BASE            */
-/* =============================== */
+/* Gradiente di sfondo */
 html.dark,
 :root[data-theme="dark"] {
   background: linear-gradient(135deg, #001028 0%, #000000 100%) fixed !important;
 }
 
-/* Rendi trasparenti i layer sopra il gradiente */
+/* Trasparenza degli strati sopra */
 .dark body,
 :root[data-theme="dark"] body,
 .dark .mintlify-container,
@@ -21,44 +20,47 @@ html.dark,
   background: transparent !important;
 }
 
-/* =============================== */
-/* LINEE DENTRO IL CONTENUTO        */
-/* =============================== */
-.dark main {
-  position: relative;
+/* Linee verticali applicate a main */
+@media (min-width: 1024px) {
+  html.dark main,
+  :root[data-theme="dark"] main {
+    position: relative;
+    z-index: 0;
+  }
+
+  html.dark main::before,
+  html.dark main::after,
+  :root[data-theme="dark"] main::before,
+  :root[data-theme="dark"] main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--line-color);
+    pointer-events: none;
+    z-index: 0;
+    box-shadow:
+      0 0 0 1px var(--line-color),
+      0 0 12px 0 var(--line-glow);
+  }
+
+  /* sinistra */
+  html.dark main::before,
+  :root[data-theme="dark"] main::before {
+    left: calc(50% - var(--line-offset));
+  }
+
+  /* destra */
+  html.dark main::after,
+  :root[data-theme="dark"] main::after {
+    left: calc(50% + var(--line-offset));
+  }
 }
 
-.dark main::before,
-.dark main::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background-color: var(--line-color);
-  pointer-events: none;
-  z-index: 10; /* sopra il gradiente ma sotto il testo */
-}
-
-/* linea sinistra */
-.dark main::before {
-  left: calc(50% - var(--line-offset));
-}
-
-/* linea destra */
-.dark main::after {
-  left: calc(50% + var(--line-offset));
-}
-
-/* =============================== */
-/* COLORI AZZURRO                   */
-/* =============================== */
-a, .link, button, .button {
-  color: #00BFFF;
-}
-a:hover, .link:hover, button:hover, .button:hover {
-  color: #4DDBFF;
-}
+/* Colori azzurro tema */
+a, .link, button, .button { color: #00BFFF; }
+a:hover, .link:hover, button:hover, .button:hover { color: #4DDBFF; }
 
 .dark .card,
 :root[data-theme="dark"] .card {
