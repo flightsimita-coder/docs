@@ -1,22 +1,18 @@
 ---
 title: "Booking Flight"
-description: "Scopri come prenotare, pianificare e completare voli con FlyITA"
+description: "FlyITA offre un sistema di prenotazione voli completo.
+Questa guida ti accompagnerà nel processo di ricerca, prenotazione e completamento dei voli."
 ---
 
 ![Backgroundhome Pn](/images/backgroundhome.png)
 
-### **Flight Booking System**
-
-FlyITA offre un sistema di prenotazione voli completo.\
-Questa guida ti accompagnerà nel processo di ricerca, prenotazione e completamento dei voli.
-
 ### **Ricerca dei voli disponibili**
 
 <AccordionGroup>
-  <Accordion title="Route Network" icon="route">
+  <Accordion title="Route Network - Le rotte FlyITA" icon="route">
     FlyITA opera i suoi voli toccando gli aeroporti dove generalmente è presente controllo attivo ATC VATSIM o dove generalmente si svolgono eventi online.
   </Accordion>
-  <Accordion title="Flotta" icon="plane">
+  <Accordion title="Flotta - Gli aerei FlyITA" icon="plane">
     - FlyByWire A320neo
     - FSLabs A321neo
     - Fenix A320
@@ -27,23 +23,15 @@ Questa guida ti accompagnerà nel processo di ricerca, prenotazione e completame
     - WBSim-JPLogistics Cessna 152
     - A2A Comanche PA-24-250
   </Accordion>
-</AccordionGroup>
+  <Accordion title="Sistema Jumpseat - Cambio location" icon="person-ski-jumping">
+    Per impostazione predefinita, i piloti sono assegnati a uno degli aeroporti hub di FlyITA come base operativa. Tuttavia, potresti voler iniziare voli da altri aeroporti in base alle tue preferenze o per creare rotte specifiche. Il sistema Jumpseat ti consente di riposizionarti in qualsiasi aeroporto della rete senza doverci volare prima.
 
----
-
-### **Sistema Jumpseat**
-
-Per impostazione predefinita, i piloti sono assegnati a uno degli aeroporti hub di FlyITA come base operativa. Tuttavia, potresti voler iniziare voli da altri aeroporti in base alle tue preferenze o per creare rotte specifiche. Il sistema Jumpseat ti consente di riposizionarti in qualsiasi aeroporto della rete senza doverci volare prima.
-
-<AccordionGroup>
-  <Accordion title="Usare un Jumpseat" icon="person-ski-jumping">
     La funzione **Jumpseat** simula un pilota che viaggia come passeggero su voli commerciali per raggiungere un nuovo punto di partenza:
 
     - Accedi all’opzione **Jumpseat** nel Pilot Hub tramite **“Flight Centre” → “Book Flights Map”**
     - Seleziona l’aeroporto di destinazione desiderato dall’elenco completo degli aeroporti nella rete FlyITA
     - Conferma cliccando **"Jumpseat"** per cambiare istantaneamente la posizione del tuo pilota
-  </Accordion>
-  <Accordion title="Restrizioni nel Jumpseat" icon="brake-warning">
+
     Sebbene il sistema **Jumpseat** offra una certa flessibilità, si applicano alcune limitazioni:
 
     - Non puoi prenotare un Jumpseat se hai un volo pianificato attivo
@@ -62,58 +50,40 @@ Segui questi passaggi per prenotare un volo nell’applicazione FlyITA Pilot Hub
   <Step title="Seleziona la destinazione">
     - L'aeroporto di partenza sarà quello dove ti trovi attualmente
     - Seleziona dalla mappa un aeroporto di destinazione
-    - Clicca "Book Flight"
+    - Clicca **"Book Flight"**
   </Step>
-  <Step title="Seleziona l'aereo">
-    - Dal menù a tendina seleziona uno tra gli aerei presenti nella flotta
-
-    <Warning>
-      Assicurati di avere il modello di aeromobile corretto nel simulatore di volo prima di effettuare la prenotazione. Usare un aereo errato durante il volo può comportare la mancata validazione del volo.
-    </Warning>
+  <Step title="Aereo e Callsign">
+    - Dal menù a tendina seleziona uno tra gli aerei presenti nella flotta e inserisci il tuo Callsign
   </Step>
-  <Step title="Callsign">
-    Inserisci il tuo Callsign
-  </Step>
-  <Step title="Pianifica e conferma">
-    Imposta i dettagli del volo:
-
+  <Step title="Pianifica e conferma" stepNumber={4}>
     - Scegli data e orario di partenza
     - Seleziona il network VATSIM
-    - Rivedi il riepilogo (rotta, aeromobile, durata stimata)
-    - Aggiungi eventuali note di volo opzionali
+    - Ricontrolla i dati
     - Clicca su **“Create Booking”** per finalizzare
   </Step>
 </Steps>
 
 ### **Preparazione al volo**
 
-Dopo la prenotazione, prepara la partenza:
+Dopo la prenotazione, preparati per la partenza:
 
-1. **Carica il volo in Pegasus ACARS**: apri Pegasus ACARS e carica il volo dalla sezione **“My Flights”**
-2. **Pianificazione del volo**:
-   - Scarica il piano di volo (disponibile in Pilot Hub e ACARS)
-   - Rivedi rotta, SID, STAR e procedure di avvicinamento
-   - Controlla le condizioni meteo negli aeroporti di partenza e arrivo
-3. Setup dell'aereomobile
-   - Avvia il simulatore di volo
-   - Seleziona il modello di aereo corretto
-   - Posizionati al gate dell’aeroporto di partenza
-   - Avvia la registrazione dal software Pegasus ACARS
-   - Configura l’aeromobile secondo le procedure
-
-### **Linee guida per l’accelerazione del tempo**
-
-L’aumento della velocità di simulazione **NON è consentita** in alcuna circostanza, pena il rifiuto del PIREP.
+1. Apri Pegasus ACARS e importa il volo dalla sezione **“My Flights”**
+2. Avvia il simulatore di volo e seleziona l'aereo corretto
+3. Posizionati al gate dell’aeroporto di partenza
+4. Avvia il volo nel Pegasus ACARS cliccando **"Start Flight"**
 
 ### **Completamento del volo**
 
-Dopo l’atterraggio e l’arrivo al gate:
+Dopo l’atterraggio e arrivo al gate:
 
-- Spegni l’aeromobile secondo le procedure
-- Completa il volo in Pegasus ACARS cliccando **“End Flight”**
-- Aggiungi eventuali commenti o note
-- Invia il report di volo
-- Il volo sarà invitato per la revisione allo staff FlyITA.
+1. Spegni l’aeromobile secondo le procedure
+2. Termina il volo in Pegasus ACARS cliccando **“End Flight”**
+3. Il volo sarà invitato per la revisione allo staff FlyITA
+
+<Danger>
+  Durante il volo l’aumento della velocità di simulazione non è consentita in alcuna circostanza;\
+  pena il rifiuto del PIREP.
+</Danger>
 
 ---
 
