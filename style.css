@@ -52,16 +52,27 @@ a:hover, .link:hover, button:hover, .button:hover {
   color: #f0f0f0;
 }
 
+/* ====== RIMUOVI QUALSIASI GLOW DA TITOLI E IMMAGINI ====== */
 .dark h1, .dark h2, .dark h3,
 :root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3 {
-  text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
+  text-shadow: none !important;
+}
+.dark img,
+:root[data-theme="dark"] img {
+  box-shadow: none !important;
+  filter: none !important;
 }
 
 /* =============================== */
 /* EFFETTO BAGLIORE SOLO SULLE CARD */
 /* =============================== */
-.dark .mintlify-container .card:hover,
-:root[data-theme="dark"] .mintlify-container .card:hover {
+/* Limita il glow alle card dentro layout a griglia/navigazione */
+.dark .cards-grid .card:hover,
+:root[data-theme="dark"] .cards-grid .card:hover,
+.dark .grid .card:hover,
+:root[data-theme="dark"] .grid .card:hover,
+.dark .card-list .card:hover,
+:root[data-theme="dark"] .card-list .card:hover {
   box-shadow:
     0 0 10px rgba(0, 191, 255, 0.6),
     0 0 20px rgba(0, 191, 255, 0.4);
