@@ -26,8 +26,10 @@
             "group": "Getting started",
             "pages": [
               "index",
-              "quickstart",
-              "downloadsoft",
+              "step1",
+              "step2",
+              "step3",
+              "bookflightguide",
               "faqpage"
             ]
           },
