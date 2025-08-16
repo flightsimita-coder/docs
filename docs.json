@@ -52,11 +52,13 @@
     "links": [
       {
         "label": "YouTube",
-        "href": "https://www.youtube.com/@FlightSimITA"
+        "href": "https://www.youtube.com/@FlightSimITA",
+        "icon": "youtube"
       },
       {
         "label": "Discord",
-        "href": "https://discord.com/invite/W6cW5Hphew"
+        "href": "https://discord.com/invite/W6cW5Hphew",
+        "icon": "discord"
       }
     ],
     "primary": {
