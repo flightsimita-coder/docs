@@ -42,22 +42,23 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Discord",
-          "href": "https://discord.com/invite/W6cW5Hphew",
-          "icon": "people-group"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/black_scritta.png",
     "dark": "/logo/white_scritta.png"
   },
   "navbar": {
+    "links": [
+      {
+        "label": "Discord",
+        "href": "https://discord.com/invite/W6cW5Hphew"
+      },
+      {
+        "label": "Fai una donazione",
+        "href": "https://streamelements.com/flightsimita/tip"
+      }
+    ],
     "primary": {
       "type": "button",
       "label": "YouTube",
