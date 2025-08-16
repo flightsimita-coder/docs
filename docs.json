@@ -49,23 +49,21 @@
     "dark": "/logo/white_scritta.png"
   },
   "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Fai una donazione",
-      "href": "https://streamelements.com/flightsimita/tip"
-    },
-    "secondary": [
+    "links": [
       {
-        "type": "button",
         "label": "YouTube",
         "href": "https://www.youtube.com/@FlightSimITA"
       },
       {
-        "type": "button",
         "label": "Discord",
         "href": "https://discord.com/invite/W6cW5Hphew"
       }
-    ]
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Fai una donazione",
+      "href": "https://streamelements.com/flightsimita/tip"
+    }
   },
   "footer": {
     "socials": {
