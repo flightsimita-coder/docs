@@ -46,11 +46,6 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Pilot Portal",
-          "href": "https://vamsys.io/register/flyitava",
-          "icon": "plane"
-        },
-        {
           "anchor": "Discord",
           "href": "https://discord.com/invite/W6cW5Hphew",
           "icon": "people-group"
