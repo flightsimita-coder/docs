@@ -19,23 +19,21 @@ Nel mondo delle compagnie aeree virtuali, il software ACARS traccia il tuo volo,
 ### Pre-Flight
 
 <AccordionGroup>
-  <Accordion title="Carica il tuo flight plan" icon="file-spreadsheet">
-    - In **Pegasus ACARS**, vai alla scheda **“Flights”**
-    - Seleziona il volo pianificato dall’elenco
-    - Clicca su **“Load Flight Plan”**
-    - I dettagli del volo verranno inseriti automaticamente
-  </Accordion>
   <Accordion title="Pre-Flight Checklist" icon="ballot-check">
     Prima di iniziare il tracciamento del volo:
 
     - Assicurati che il simulatore sia avviato e connesso
     - Verifica che il tipo di aeromobile corrisponda a quello del volo pianificato
     - Assicurati che gli aeroporti di partenza/arrivo siano corretti
-    - Controlla che le impostazioni meteo corrispondano a quelle di **VATSIM**
+    - Controlla che le impostazioni meteo e orario siano in tempo reale.
 
     <Warning>
       Non iniziare a registrare il volo prima che il simulatore sia completamente caricato e che tu sia parcheggiato al gate di partenza.
     </Warning>
+    - Posizionati al gate dell’aeroporto di partenza
+    - In **Pegasus ACARS**, vai alla scheda **“Booking”**
+    - Avvia il volo nel Pegasus ACARS cliccando **"Start Flight"**
+    - 
   </Accordion>
 </AccordionGroup>
 
@@ -43,9 +41,8 @@ Nel mondo delle compagnie aeree virtuali, il software ACARS traccia il tuo volo,
 
 Il tracciamento del volo avviene automaticamente una volta avviato il processo di registrazione:
 
-1. Clicca **" Start Flight"** in Pegasus ACARS
-2. Il software rileverà la tua posizione, altitudine, velocità e altri parametri.
-3. Gli eventi chiave del volo verranno registrati automaticamente:
+1. Il software rileverà la tua posizione, altitudine, velocità e altri parametri.
+2. Gli eventi chiave del volo verranno registrati automaticamente:
    - Avvio motori
    - Pushback
    - Decollo
@@ -68,15 +65,14 @@ Il tracciamento del volo avviene automaticamente una volta avviato il processo d
 Dopo essere atterrato, raggiunto il gate di arrivo e spento i motori:
 
 1. Pegasus ACARS ti inviterà a completare il tuo volo
-2. Rivedi il riepilogo del volo e aggiungi eventuali commenti
-3. Clicca "Submit Flight Report"
-4. I dati del tuo volo verranno inviati al database FlyITA per essere revisionati per l'approvazione
+2. Clicca **"File PIREP"**
+3. I dati del tuo volo verranno inviati al database FlyITA per essere revisionati per l'approvazione
 
 ## Risoluzione dei problemi comuni
 
 <CardGroup cols={2}>
   <Card title="Simulatore non rilevato" icon="display">
-    Assicurati che il simulatore sia in esecuzione prima di aprire Pegasus ACARS. Se ancora non funziona, prova a reinstallare il modulo di connessione del simulatore.
+    Assicurati che il simulatore sia in esecuzione prima di aprire Pegasus ACARS. Se ancora non funziona, prova a reinstallare simconnect.
   </Card>
   <Card title="Connessione persa durante il volo" icon="globe-pointer">
     Controlla la connessione a Internet. Pegasus ACARS può memorizzare i dati localmente fino a 20 minuti di disconnessione prima di richiedere la riconnessione.
@@ -89,13 +85,7 @@ Dopo essere atterrato, raggiunto il gate di arrivo e spento i motori:
   </Card>
 </CardGroup>
 
-### Features Avanzate
-
-- **Custom Flight Planning:** crea e importa piani di volo personalizzati
-- **Voice Reporting:** abilita gli annunci vocali per gli eventi di volo _(non disponibile al momento)_
-- **Performance Analysis:** consulta metriche e performance dettagliate dopo ogni volo
-- **Logbook Integration:** aggiorna automaticamente il tuo registro voli virtuale
-- 
+### 
 
 ## Hai bisogno di aiuto?
 
